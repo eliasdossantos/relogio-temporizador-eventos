@@ -1,0 +1,361 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.remote-container {
+  width: 100%;
+  max-width: 380px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+}
+
+/* Display do Tempo */
+.timer-display-remote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.timer-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.time-separator {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1;
+  opacity: 0.7;
+}
+
+/* Status */
+.status-display {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#remoteStatus {
+  font-size: 0.9rem;
+  color: #888;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Input */
+.input-section {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#remoteTimerInput {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+#remoteTimerInput:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#remoteTimerInput::placeholder {
+  color: #666;
+}
+
+/* Controles Principais */
+.main-controls {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.control-btn {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.control-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none !important;
+  pointer-events: none;
+}
+
+.control-btn:not(:disabled) {
+  pointer-events: auto;
+}
+
+.control-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Botão Iniciar - Verde */
+.primary {
+  background: #28a745;
+  color: #ffffff;
+  border: 1px solid #28a745;
+}
+
+.primary:hover:not(:disabled) {
+  background: #218838;
+  border-color: #1e7e34;
+  transform: translateY(-1px);
+}
+
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+  background: #1e7e34;
+}
+
+/* Botão Pausar - Amarelo */
+.secondary {
+  background: #ffc107;
+  color: #212529;
+  border: 1px solid #ffc107;
+  font-weight: 600;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #e0a800;
+  border-color: #d39e00;
+  transform: translateY(-1px);
+}
+
+.secondary:active:not(:disabled) {
+  transform: translateY(0);
+  background: #d39e00;
+}
+
+/* Controles Secundários */
+.secondary-controls {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Botão Continuar - Azul claro */
+.tertiary#remoteResumeBtn {
+  background: #17a2b8;
+  color: #ffffff;
+  border: 1px solid #17a2b8;
+}
+
+.tertiary#remoteResumeBtn:hover:not(:disabled) {
+  background: #138496;
+  border-color: #117a8b;
+  transform: translateY(-1px);
+}
+
+.tertiary#remoteResumeBtn:active:not(:disabled) {
+  transform: translateY(0);
+  background: #117a8b;
+}
+
+/* Botão Zerar - Vermelho */
+.tertiary#remoteResetBtn {
+  background: #dc3545;
+  color: #ffffff;
+  border: 1px solid #dc3545;
+}
+
+.tertiary#remoteResetBtn:hover:not(:disabled) {
+  background: #c82333;
+  border-color: #bd2130;
+  transform: translateY(-1px);
+}
+
+.tertiary#remoteResetBtn:active:not(:disabled) {
+  transform: translateY(0);
+  background: #bd2130;
+}
+
+/* Remover o estilo genérico .tertiary para evitar conflitos */
+.tertiary {
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: transparent;
+  color: #888;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tertiary:hover:not(:disabled) {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Presets */
+.preset-section {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.preset-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.preset-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #fff;
+  padding: 14px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  width: 100%;
+}
+
+.preset-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.preset-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.preset-time {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* Indicador de Conexão */
+.connection-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 8px;
+  height: 8px;
+}
+
+.connection-dot {
+  width: 100%;
+  height: 100%;
+  background: #4caf50;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.connection-dot.disconnected {
+  background: #f44336;
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Estados do Timer */
+.timer-number.warning {
+  color: #ff6b35 !important;
+}
+
+.timer-number.danger {
+  color: #ff4444 !important;
+}
+
+/* Responsividade */
+@media (max-width: 400px) {
+  .remote-container {
+    padding: 25px 20px;
+    gap: 20px;
+  }
+
+  .timer-number {
+    font-size: 3.5rem;
+  }
+
+  .time-separator {
+    font-size: 3.5rem;
+  }
+
+  .control-btn {
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .preset-btn {
+    padding: 12px 16px;
+  }
+}
+
+/* Animações suaves */
+.remote-container > * {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
