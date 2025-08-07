@@ -235,4 +235,3 @@ Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](
 ---
 
 _Se este projeto foi útil para você, considere dar uma ⭐ no repositório!_
-# relogio-temporizador-eventos
