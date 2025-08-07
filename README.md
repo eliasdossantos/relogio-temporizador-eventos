@@ -222,10 +222,6 @@ R: Sim, editando os arquivos .js
 3. **Inclua** passos para reproduzir
 4. **Adicione** screenshots se relevante
 
-## 📄 Licença
-
-Este projeto está licenciado sob a **Licença MIT** - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
 ---
 
 **Desenvolvido com ❤️ para controle eficiente de tempo**
