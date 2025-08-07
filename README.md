@@ -131,7 +131,6 @@ php -S localhost:8000
 
 ## 📁 Estrutura do Projeto
 
-\`\`\`
 sistema-temporizador/
 ├── 📄 index.html # Página principal
 ├── 📄 remote.html # Controle remoto (popup)
