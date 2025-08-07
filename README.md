@@ -129,17 +129,20 @@ php -S localhost:8000
 - **LocalStorage** - Armazenamento local de preferências
 - **Responsive Design** - Adaptação automática a dispositivos
 
+
 ## 📁 Estrutura do Projeto
 
 \`\`\`
-sistema-temporizador/
-├── 📄 index.html # Página principal
-├── 📄 remote.html # Controle remoto (popup)
-├── 🎨 css/styles.css # Estilos da página principal
-├── 🎨 css/remote-styles.css # Estilos do controle remoto
-├── ⚙️ js/script.js # Lógica principal (TimerSystem)
-├── ⚙️ js/remote-script.js # Lógica do controle remoto
-├── 📚 README.md # Este arquivo - Documentação técnica completa
+- sistema-temporizador/
+- ├── 📄 index.php          # Página principal
+- ├── 📄 remote.php         # Controle remoto
+- ├── css/
+- │   ├── 🎨 styles.css      # Estilos principais
+- │   └── 🎨 remote-styles.css
+- ├── js/
+- │   ├── ⚙️ script.js       # Lógica principal
+- │   └── ⚙️ remote-script.js
+- └── 📚 README.md           # Documentação
 
 ## 🔧 Requisitos do Sistema
 
